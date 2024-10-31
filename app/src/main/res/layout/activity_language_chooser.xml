@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LanguageChooserActivity"
+    android:background="@color/light_main_background_color">
+
+    <TextView
+        android:id="@+id/tvSelectLanguageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:text="Select Language"
+        android:textColor="@color/light_primary_color"
+        android:textSize="32sp"
+        android:layout_marginTop="110dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEnglishLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectLanguageTitle"
+        android:layout_marginTop="72dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="30dp"
+        android:text="English"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/light_main_text_color"
+        android:textAlignment="textStart"
+        android:textSize="20dp"
+        android:background="@drawable/small_border"
+        android:drawableLeft="@drawable/ukflag"
+        android:drawablePadding="10dp"
+        android:textAllCaps="false"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnVietNamLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEnglishLanguage"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="30dp"
+        android:text="Vietnamese"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/light_main_text_color"
+        android:textAlignment="textStart"
+        android:textSize="20dp"
+        android:background="@drawable/small_border"
+        android:drawableLeft="@drawable/vnflag"
+        android:drawablePadding="10dp"
+        android:textAllCaps="false"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLanguageNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVietNamLanguage"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:text="continue"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:background="@drawable/small_border"
+        android:backgroundTint="@color/light_primary_color"
+        android:drawablePadding="10dp"
+        android:shadowColor="@color/light_primary_color"
+        android:textAllCaps="false"/>
+    
+
+</androidx.constraintlayout.widget.ConstraintLayout>
