@@ -17,6 +17,7 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -30,6 +31,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     private TextView tvPrivacy, tvSignIn;
     private TextInputEditText textInputPassword, textInputName, textInputMail;
+    private AppCompatButton btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,15 @@ public class CreateAccountActivity extends AppCompatActivity {
         textInputPassword = findViewById(R.id.editPassword);
         textInputMail = findViewById(R.id.editEmail);
         textInputName = findViewById(R.id.editName);
+        btnNext = findViewById(R.id.btnCreateAccountNext);
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CreateAccountActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
 //      Create a link at a sequence
         setLinkText("Tarms of Service", tvPrivacy);

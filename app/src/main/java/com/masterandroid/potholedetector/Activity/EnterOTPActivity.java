@@ -12,6 +12,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -65,6 +66,7 @@ public class EnterOTPActivity extends AppCompatActivity {
     private void setUpEditTexts(EditText[] editTexts) {
         for (int i = 0; i < editTexts.length; i++) {
             int index = i;
+            editTexts[i].setBackgroundColor(ContextCompat.getColor(this, R.color.light_sub_background_color_blue));
             editTexts[i].addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

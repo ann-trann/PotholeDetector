@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:enabled="true"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/map"
+        android:icon="@drawable/map"
+        android:enabled="true"
+        android:title="Map"/>
+
+    <item
+        android:id="@+id/report"
+        android:icon="@drawable/report"
+        android:enabled="true"
+        android:title="Report"/>
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/profile"
+        android:enabled="true"
+        android:title="Profile"/>
+
+</menu>
