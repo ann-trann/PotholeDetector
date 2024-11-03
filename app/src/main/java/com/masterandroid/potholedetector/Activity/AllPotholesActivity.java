@@ -57,14 +57,12 @@ public class AllPotholesActivity extends AppCompatActivity {
         for (int i = 0; i < 16; i++) {
             date -= 0.5;
 
-            // Làm tròn `date` thành số nguyên
             int roundedDate = Math.round(date);
             String dateString = roundedDate + "/10/2024";
 
             PotholeModel pothole = new PotholeModel("Detect", dateString + ", 4:14 PM",
                     "Tạ Quang Bửu, Khu phố 6, phường Linh Trung, thành phố Thủ Đức, TP. HCM");
 
-            // Nhóm các item theo ngày
             if (!groupedItems.containsKey(dateString)) {
                 groupedItems.put(dateString, new ArrayList<>());
             }

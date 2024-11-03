@@ -3,12 +3,17 @@ package com.masterandroid.potholedetector.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.masterandroid.potholedetector.Adapter.SettingAdapter;
 import com.masterandroid.potholedetector.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +26,7 @@ public class ProfileFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static ArrayList<String> settingNameList;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -60,7 +66,23 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        initData();
+        RecyclerView recyclerView = view.findViewById(R.id.profileAllSetting);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        SettingAdapter adapter = new SettingAdapter(settingNameList, getContext());
+        recyclerView.setAdapter(adapter);
+
+        return view;
+    }
+
+    private static void initData() {
+        settingNameList = new ArrayList<String>();
+        settingNameList.add("Notifications");
+        settingNameList.add("Appearance");
+        settingNameList.add("Language");
+        settingNameList.add("Privacy & Security");
+        settingNameList.add("Storage");
     }
 }

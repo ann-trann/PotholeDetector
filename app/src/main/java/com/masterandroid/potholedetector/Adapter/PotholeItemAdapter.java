@@ -14,6 +14,8 @@ import com.masterandroid.potholedetector.R;
 
 import java.util.ArrayList;
 
+// Create adapter for recycler view in home fragment, to get recent pothole what driver faced
+
 public class PotholeItemAdapter extends RecyclerView.Adapter<PotholeItemAdapter.ViewHolder> {
 
     private  ArrayList<PotholeModel> potholeModels;

@@ -16,6 +16,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+// Create Adapter for recycler view in All Potholes Activity, get all pothole and sort it by date
+// Recycler view will display date and what pothole was detected in that date
+
 public class AllPotholesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private Map<String, ArrayList<PotholeModel>> groupedItems;
