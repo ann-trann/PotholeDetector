@@ -19,7 +19,7 @@
         android:text="Select Language"
         android:textColor="@color/light_primary_color"
         android:textSize="32sp"
-        android:layout_marginTop="110dp"/>
+        android:layout_marginTop="110dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEnglishLanguage"
@@ -42,7 +42,7 @@
         android:background="@drawable/small_border"
         android:drawableLeft="@drawable/ukflag"
         android:drawablePadding="10dp"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnVietNamLanguage"
@@ -65,7 +65,7 @@
         android:background="@drawable/small_border"
         android:drawableLeft="@drawable/vnflag"
         android:drawablePadding="10dp"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
 
     <androidx.appcompat.widget.AppCompatButton
@@ -89,7 +89,7 @@
         android:backgroundTint="@color/light_primary_color"
         android:drawablePadding="10dp"
         android:shadowColor="@color/light_primary_color"
-        android:textAllCaps="false"/>
-    
+        android:textAllCaps="false" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

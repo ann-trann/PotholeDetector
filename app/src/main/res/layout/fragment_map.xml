@@ -13,6 +13,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="Map View"
         app:titleTextColor="@color/light_primary_color"
-        android:background="@color/white"/>
+        android:background="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

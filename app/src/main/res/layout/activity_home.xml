@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:name="com.masterandroid.potholedetector.Fragment.HomeFragment"
-        android:layout_marginBottom="80dp"/>
+        android:layout_marginBottom="80dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -24,6 +24,6 @@
         app:menu="@menu/nav_bar_item"
         android:background="@color/white"
         app:itemIconTint="@color/light_main_text_color"
-        app:itemTextColor="@color/light_main_text_color"/>
+        app:itemTextColor="@color/light_main_text_color" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

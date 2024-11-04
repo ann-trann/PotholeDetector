@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.AppearanceFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/appearanceToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Appearance"
+        app:titleTextColor="@color/light_primary_color"
+        app:navigationIcon="@drawable/car_ui_icon_arrow_back" />
+
+    <RadioGroup
+        android:id="@+id/appearanceRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="64dp">
+
+        <RadioButton
+            android:id="@+id/appearanceRadioButtonLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="Light"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/appearanceRadioButtonDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="Dark"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/appearanceRadioButtonSystem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:text="System"
+            android:textSize="16sp" />
+
+
+    </RadioGroup>
+
+
+</FrameLayout>

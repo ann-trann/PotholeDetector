@@ -19,7 +19,7 @@
         android:text="Create Account"
         android:textColor="@color/light_primary_color"
         android:textSize="32sp"
-        android:layout_marginTop="110dp"/>
+        android:layout_marginTop="110dp" />
 
     <TextView
         android:id="@+id/tvCreateAccountSub"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvCreateAccountTitle"
         android:text="Fill your information below or register \nwith your social account"
         android:layout_marginTop="20dp"
-        android:textAlignment="center"/>
+        android:textAlignment="center" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCreateByFacebook"
@@ -52,7 +52,7 @@
         android:background="@drawable/small_border"
         android:drawableLeft="@drawable/facebook"
         android:drawablePadding="10dp"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCreateByGmail"
@@ -74,7 +74,7 @@
         android:background="@drawable/small_border"
         android:drawableLeft="@drawable/google"
         android:drawablePadding="10dp"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <TextView
         android:id="@+id/tvOr"
@@ -89,7 +89,7 @@
         android:background="@drawable/round_border"
         android:elevation="1dp"
         android:padding="8dp"
-        android:backgroundTint="#fef7ff"/>
+        android:backgroundTint="#fef7ff" />
 
     <View
         android:layout_width="match_parent"
@@ -100,7 +100,7 @@
         android:layout_marginTop="20dp"
         android:background="@color/light_sub_background_color_gray"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"/>
+        android:layout_marginRight="25dp" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -121,7 +121,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/small_border"
             android:textColorHint="#7C8BA0"
-            android:hint="Name"/>
+            android:hint="Name" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -143,7 +143,7 @@
             android:textColorHint="#7C8BA0"
             android:layout_height="wrap_content"
             android:background="@drawable/small_border"
-            android:hint="Email"/>
+            android:hint="Email" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -167,7 +167,7 @@
             android:textColorHint="#7C8BA0"
             android:inputType="textPassword"
             android:hint="Password"
-            android:background="@drawable/small_border"/>
+            android:background="@drawable/small_border" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
@@ -180,7 +180,7 @@
         android:checked="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
-        android:button="@drawable/checkbox_custom"/>
+        android:button="@drawable/checkbox_custom" />
 
     <TextView
         android:id="@+id/privacy"
@@ -191,7 +191,7 @@
         app:layout_constraintLeft_toRightOf="@+id/isCheckPrivacy"
         app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
         android:layout_marginTop="20dp"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCreateAccountNext"
@@ -214,7 +214,7 @@
         android:backgroundTint="@color/light_primary_color"
         android:drawablePadding="10dp"
         android:shadowColor="@color/light_primary_color"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <TextView
         android:id="@+id/signInAccount"
@@ -226,6 +226,6 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="14dp"
         android:textSize="12sp"
-        android:textColor="@color/light_sub_text_color"/>
+        android:textColor="@color/light_sub_text_color" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

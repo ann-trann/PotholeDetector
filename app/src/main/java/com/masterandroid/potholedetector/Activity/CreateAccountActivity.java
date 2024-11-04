@@ -56,6 +56,7 @@ public class CreateAccountActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(CreateAccountActivity.this, HomeActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -87,6 +88,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                     public void onClick(@NonNull View view) {
                         Intent intent = new Intent(CreateAccountActivity.this, SignInActivity.class);
                         startActivity(intent);
+                        finish();
                     }
 
                     @Override

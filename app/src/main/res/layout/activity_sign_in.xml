@@ -19,7 +19,7 @@
         android:text="Sign In"
         android:textColor="@color/light_primary_color"
         android:textSize="32sp"
-        android:layout_marginTop="110dp"/>
+        android:layout_marginTop="110dp" />
 
     <TextView
         android:id="@+id/tvSignInAccountSub"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvSignInAccountTitle"
         android:text="Hi! Welcome back"
         android:layout_marginTop="20dp"
-        android:textAlignment="center"/>
+        android:textAlignment="center" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSignInByFacebook"
@@ -53,7 +53,7 @@
         android:background="@drawable/small_border"
         android:drawableLeft="@drawable/facebook"
         android:drawablePadding="10dp"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSignInByGmail"
@@ -75,7 +75,7 @@
         android:background="@drawable/small_border"
         android:drawableLeft="@drawable/google"
         android:drawablePadding="10dp"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <TextView
         android:id="@+id/tvOr"
@@ -90,7 +90,7 @@
         android:background="@drawable/round_border"
         android:elevation="1dp"
         android:padding="8dp"
-        android:backgroundTint="@color/white"/>
+        android:backgroundTint="@color/white" />
 
     <View
         android:layout_width="match_parent"
@@ -101,7 +101,7 @@
         android:layout_marginTop="20dp"
         android:background="@color/light_sub_background_color_gray"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"/>
+        android:layout_marginRight="25dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailLayout"
@@ -121,7 +121,7 @@
             android:textColorHint="#7C8BA0"
             android:layout_height="wrap_content"
             android:background="@drawable/small_border"
-            android:hint="Email"/>
+            android:hint="Email" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -145,7 +145,7 @@
             android:textColorHint="#7C8BA0"
             android:inputType="textPassword"
             android:hint="Password"
-            android:background="@drawable/small_border"/>
+            android:background="@drawable/small_border" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -157,7 +157,7 @@
         android:text="Forget Password?"
         android:layout_marginRight="50dp"
         android:layout_marginTop="10dp"
-        android:textColor="@color/light_primary_color"/>
+        android:textColor="@color/light_primary_color" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSignInNext"
@@ -180,7 +180,7 @@
         android:backgroundTint="@color/light_primary_color"
         android:drawablePadding="10dp"
         android:shadowColor="@color/light_primary_color"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <TextView
         android:id="@+id/signUpAccount"
@@ -192,6 +192,6 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="14dp"
         android:textSize="12sp"
-        android:textColor="@color/light_sub_text_color"/>
+        android:textColor="@color/light_sub_text_color" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

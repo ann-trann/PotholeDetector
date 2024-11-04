@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.masterandroid.potholedetector.Event.SettingItemInteface;
 import com.masterandroid.potholedetector.R;
 
 import java.util.ArrayList;
@@ -19,10 +20,12 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.ViewHold
 
     private ArrayList<String> settingNameList;
     private Context context;
+    private SettingItemInteface settingItemInteface;
 
-    public SettingAdapter(ArrayList<String> settingNameList, Context context) {
+    public SettingAdapter(ArrayList<String> settingNameList, Context context, SettingItemInteface settingItemInteface) {
         this.settingNameList = settingNameList;
         this.context = context;
+        this.settingItemInteface = settingItemInteface;
     }
 
     @NonNull
@@ -51,6 +54,19 @@ public class SettingAdapter extends RecyclerView.Adapter<SettingAdapter.ViewHold
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvNameSetting = itemView.findViewById(R.id.itemSettingName);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (settingItemInteface != null) {
+                        int position =getLayoutPosition();
+
+                        if (position != RecyclerView.NO_POSITION) {
+                            settingItemInteface.click(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }

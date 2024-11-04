@@ -62,6 +62,7 @@ public class LanguageChooserActivity extends AppCompatActivity {
                 if (isClick) {
                     Intent intent = new Intent(LanguageChooserActivity.this, CreateAccountActivity.class);
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(LanguageChooserActivity.this, "Please choose language", Toast.LENGTH_LONG).show();
                 }

@@ -1,11 +1,16 @@
 package com.masterandroid.potholedetector.Activity;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.RippleDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -36,6 +41,18 @@ public class HomeActivity extends AppCompatActivity {
             return insets;
         });
 
+        setUpNavBottom();
+    }
+
+    private void switchFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.fragmentContainer, fragment);
+        fragmentTransaction.commit();
+    }
+
+    private void setUpNavBottom() {
         navBottom = findViewById(R.id.bottom_navigation);
         navBottom.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -57,13 +74,19 @@ public class HomeActivity extends AppCompatActivity {
                 return false;
             }
         });
-    }
 
-    private void switchFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        ColorStateList colorStateList = new ColorStateList(
+                new int[][]{
+                        new int[]{android.R.attr.state_checked}, // trạng thái được chọn
+                        new int[]{-android.R.attr.state_checked} // trạng thái không được chọn
+                },
+                new int[]{
+                        ContextCompat.getColor(this, R.color.light_primary_color), // Màu khi được chọn
+                        ContextCompat.getColor(this, R.color.light_main_text_color) // Màu khi không được chọn
+                }
+        );
 
-        fragmentTransaction.replace(R.id.fragmentContainer, fragment);
-        fragmentTransaction.commit();
+        navBottom.setItemIconTintList(colorStateList);
+        navBottom.setItemTextColor(colorStateList);
     }
 }

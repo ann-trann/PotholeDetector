@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/main"
         android:layout_width="match_parent"
@@ -23,7 +22,7 @@
             android:textColor="@color/white"
             android:textSize="30sp"
             android:fontFamily="sans-serif"
-            android:layout_margin="30dp"/>
+            android:layout_margin="30dp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
@@ -37,7 +36,7 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/user1"/>
+                android:background="@drawable/user1" />
         </androidx.cardview.widget.CardView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -72,7 +71,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="6dp"
                         android:textSize="12sp"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/homeTotalPorhole"
@@ -84,7 +83,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         android:text="540"
                         android:textColor="@color/white"
-                        android:textSize="30sp"/>
+                        android:textSize="30sp" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -105,7 +104,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="6dp"
                         android:textSize="12sp"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/distanceTotalPothole"
@@ -117,7 +116,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         android:text="1200"
                         android:textColor="@color/white"
-                        android:textSize="30sp"/>
+                        android:textSize="30sp" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -144,7 +143,7 @@
                     android:textColor="@color/light_primary_color"
                     android:textSize="36sp"
                     android:layout_margin="20dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvTotalPotholes"
@@ -157,7 +156,7 @@
                     android:textSize="20sp"
                     android:layout_marginTop="18dp"
                     android:layout_marginRight="56dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/homeTodayPotholes"
@@ -169,7 +168,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginRight="164dp"
                     android:layout_marginBottom="8dp"
-                    android:textSize="50sp"/>
+                    android:textSize="50sp" />
 
                 <TextView
                     android:id="@+id/homeTodayDistance"
@@ -181,7 +180,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginRight="80dp"
                     android:layout_marginBottom="16dp"
-                    android:textSize="22sp"/>
+                    android:textSize="22sp" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -195,7 +194,7 @@
                 android:text="Recent"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/light_primary_color"/>
+                android:textColor="@color/light_primary_color" />
 
             <TextView
                 android:id="@+id/homeAllPotholesNavigation"

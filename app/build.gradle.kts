@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.masterandroid.potholedetector"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -29,6 +29,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -38,6 +41,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.car.ui.lib)
     implementation(libs.play.services.maps)
+    implementation("com.google.android.gms:play-services-maps:19.0.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
