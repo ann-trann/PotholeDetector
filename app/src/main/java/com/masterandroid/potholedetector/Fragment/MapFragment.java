@@ -1,14 +1,22 @@
 package com.masterandroid.potholedetector.Fragment;
 
+import android.content.pm.PackageManager;
+import android.health.connect.datatypes.ExerciseRoute;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.Manifest;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,14 +24,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.masterandroid.potholedetector.R;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link MapFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MapFragment extends Fragment {
+public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,6 +54,9 @@ public class MapFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private GoogleMap mMap;
+    private Location currentLocation;
+    private FusedLocationProviderClient fusedLocationProviderClient;
 
     public MapFragment() {
         // Required empty public constructor
@@ -70,8 +94,9 @@ public class MapFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_map, container, false);
-        Toolbar toolbar = view.findViewById(R.id.mapToolbar);
 
+        getLastLocation();
+        Toolbar toolbar = view.findViewById(R.id.mapToolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
 
         return view;
@@ -92,7 +117,25 @@ public class MapFragment extends Fragment {
                     @Override
                     public boolean onQueryTextSubmit(String query) {
                         // Xử lý khi người dùng nhấn nút "Search" trên bàn phím
-                        Toast.makeText(getContext(), "Tìm kiếm: " + query, Toast.LENGTH_SHORT).show();
+
+                        String location = searchView.getQuery().toString();
+                        List<Address> addressList = null;
+
+                        if (location != null) {
+                            Geocoder geocoder = new Geocoder(getActivity());
+
+                            try {
+                                addressList = geocoder.getFromLocationName(location, 1);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                            Address address = addressList.get(0);
+                            LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+                            mMap.addMarker(new MarkerOptions().position(latLng));
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+                        }
+
                         return true;
                     }
 
@@ -115,5 +158,47 @@ public class MapFragment extends Fragment {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        mMap = googleMap;
+
+        LatLng currentPosition = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
+        mMap.addMarker(new MarkerOptions().position(currentPosition));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentPosition, 15));
+    }
+
+    private void enableMyLocation() {
+        if (mMap != null) {
+            if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
+            mMap.setMyLocationEnabled(true); // Bật hiển thị vị trí hiện tại của người dùng
+        }
+    }
+
+    private void getLastLocation() {
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        } else {
+            enableMyLocation();
+        }
+
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
+
+        Task<Location> task = fusedLocationProviderClient.getLastLocation();
+        task.addOnSuccessListener(new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if (location != null) {
+                    currentLocation = location;
+
+                    SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
+                            .findFragmentById(R.id.mapGmap);
+                    mapFragment.getMapAsync(MapFragment.this);
+                }
+            }
+        });
     }
 }

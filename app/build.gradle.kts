@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.car.ui.lib)
     implementation(libs.play.services.maps)
     implementation("com.google.android.gms:play-services-maps:19.0.0")
+    implementation(libs.play.services.location)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

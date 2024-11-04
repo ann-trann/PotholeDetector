@@ -2,5 +2,5 @@
     <string name="app_name">Pothole Detector</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="api_key">AIzaSyCkQa0ejVz29HY9S3tk5wmxWKM9sQHDhz0</string>
 </resources>
